@@ -38,7 +38,7 @@ def get_roadmap_url():
 
     print(workspace_path)
     print(glob.glob(f"{workspace_path}/*"))
-    print(glob.glob("/app/*"))
+    print(glob.glob("/github/*"))
     print(glob.glob("/*"))
 
     readme_paths = glob.glob(f"{workspace_path}/[rR][eE][aA][dD][mM][eE].[mM][dD]")
