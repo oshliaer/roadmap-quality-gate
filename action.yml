@@ -1,0 +1,20 @@
+name: 'Project Analysis Bot'
+description: 'AI-powered repository analysis using Gemini'
+branding:
+  icon: 'activity'
+  color: 'blue'
+
+inputs:
+  google_api_key:
+    description: 'Google Gemini API Key'
+    required: true
+  github_token:
+    description: 'GitHub Token'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.google_api_key }}
+    - ${{ inputs.github_token }}
