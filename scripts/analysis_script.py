@@ -37,11 +37,6 @@ gw = get_env("GITHUB_WORKSPACE")
 
 def get_roadmap_url():
 
-    print(gw)
-    print(glob.glob(f"{workspace_path}/*"))
-    print(glob.glob("/github/*/*"))
-    print(glob.glob("/*"))
-
     readme_paths = glob.glob(f"{workspace_path}/[rR][eE][aA][dD][mM][eE].[mM][dD]")
 
     if not readme_paths:
@@ -134,7 +129,7 @@ async def main():
         print("Repository content obtained")
 
         # Step 3: Load system prompt
-        with open("./system_prompt.md", "r") as f:
+        with open("/app/system_prompt.md", "r") as f:
             system_prompt = f.read()
 
         if not system_prompt:
