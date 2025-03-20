@@ -160,17 +160,8 @@ async def main():
         # Step 5: Send comment
         g = Github(github_token)
         repo = g.get_repo(os.getenv("GITHUB_REPOSITORY"))
-
-        print(repo.name)
-
-        print(os.getenv("GITHUB_REF"))
-
-        pr_number = os.getenv("GITHUB_REF").split("/")[2]
-
-        print(pr_number)
-
+        pr_number = int(os.getenv("GITHUB_REF").split("/")[2])
         pr = repo.get_pull(pr_number)
-
         comment = f"## 🤖 AI Analysis Report\n\n{analys}"
         pr.create_issue_comment(comment)
 
