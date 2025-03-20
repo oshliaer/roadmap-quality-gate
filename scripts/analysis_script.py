@@ -30,13 +30,14 @@ def get_env(name, dflt):
 
 
 workspace_path = get_env("WORKSPACE_PATH", "/github/workspace")
-google_api_key = get_env("GOOGLE_API_KEY", "")
-github_token = get_env("GITHUB_TOKEN", "")
+google_api_key = get_env("GOOGLE_API_KEY")
+github_token = get_env("GITHUB_TOKEN")
+gw = get_env("GITHUB_WORKSPACE")
 
 
 def get_roadmap_url():
 
-    print(workspace_path)
+    print(gw)
     print(glob.glob(f"{workspace_path}/*"))
     print(glob.glob("/github/*/*"))
     print(glob.glob("/*"))
