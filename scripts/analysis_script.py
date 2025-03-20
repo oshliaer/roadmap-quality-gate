@@ -20,7 +20,7 @@ now = datetime.datetime.now()
 date_string = now.strftime("%Y-%m-%d")
 
 
-def get_env(name, dflt):
+def get_env(name, dflt=None):
     value = os.getenv(name)
     if value is None or value == "":
         if dflt:
