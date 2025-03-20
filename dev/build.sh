@@ -47,7 +47,6 @@ echo -e "${YELLOW}Starting new container ${CONTAINER_NAME}...${NC}"
 
 docker run -d --name ${CONTAINER_NAME} \
     -v "$(pwd)/test:/github" \
-    -e WORKSPACE_PATH="/github/workspace" \
     -e GOOGLE_API_KEY="${GOOGLE_API_KEY}" \
     -e GITHUB_TOKEN="${GITHUB_TOKEN}" \
     ${IMAGE_NAME}
