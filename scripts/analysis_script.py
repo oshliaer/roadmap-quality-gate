@@ -158,13 +158,13 @@ async def main():
         # )
 
         # Step 5: Send comment
-        # g = Github(github_token)
-        # repo = g.get_repo(os.getenv("GITHUB_REPOSITORY"))
-        # pr_number = int(os.getenv("GITHUB_REF").split("/")[2])
-        # pr = repo.get_pull(pr_number)
+        g = Github(github_token)
+        repo = g.get_repo(os.getenv("GITHUB_REPOSITORY"))
+        pr_number = int(os.getenv("GITHUB_REF").split("/")[2])
+        pr = repo.get_pull(pr_number)
 
-        # comment = f"## 🤖 AI Analysis Report\n\n{response.text}"
-        # pr.create_issue_comment(comment)
+        comment = f"## 🤖 AI Analysis Report\n\n{analys}"
+        pr.create_issue_comment(comment)
 
     except Exception as e:
         print(f"::error:: {str(e)}")
