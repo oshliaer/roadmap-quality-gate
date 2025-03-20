@@ -163,7 +163,9 @@ async def main():
 
         print(repo.name)
 
-        pr_number = int(os.getenv("GITHUB_REF").split("/")[2])
+        print(os.getenv("GITHUB_REF"))
+
+        pr_number = os.getenv("GITHUB_REF").split("/")[2]
 
         print(pr_number)
 
