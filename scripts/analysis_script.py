@@ -35,6 +35,9 @@ github_token = get_env("GITHUB_TOKEN", "")
 
 
 def get_roadmap_url():
+
+    print(workspace_path)
+
     readme_paths = glob.glob(f"{workspace_path}/[rR][eE][aA][dD][mM][eE].[mM][dD]")
 
     if not readme_paths:
